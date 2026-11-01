@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 64" fill="none">
+  <title>ВИКИНГ — фитнес-клуб в Екатеринбурге</title>
+  <desc>Оранжевый щит с угловатым знаком V и белая надпись ВИКИНГ.</desc>
+  <path fill="#ff5b20" fill-rule="evenodd" d="M30 2 58 12V35L48 49 30 62 12 49 2 35V12L30 2ZM14 17l8 25 8 8 8-8 8-25H36l-6 22-6-22H14Z"/>
+  <g fill="#f1f0eb" fill-rule="evenodd" transform="translate(78 11) scale(1.065 1.05)"><path transform="translate(0 0)" d="M0 0h18l8 8v7l-5 5 5 5v7l-8 8H0V0Zm8 8v8h8l2-2v-4l-2-2H8Zm0 16v8h8l2-2v-4l-2-2H8Z"/><path transform="translate(36 0)" d="M0 0h8v25L18 0h8v40h-8V15L8 40H0V0Z"/><path transform="translate(72 0)" d="M0 0h8v16h3L20 0h9L17 20l12 20h-9l-9-16H8v16H0V0Z"/><path transform="translate(108 0)" d="M0 0h8v25L18 0h8v40h-8V15L8 40H0V0Z"/><path transform="translate(144 0)" d="M0 0h8v16h10V0h8v40h-8V24H8v16H0V0Z"/><path transform="translate(180 0)" d="M0 0h26v8H8v32H0V0Z"/></g>
+</svg>

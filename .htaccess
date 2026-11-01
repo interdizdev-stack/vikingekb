@@ -1,0 +1,56 @@
+# VIKING / viking-ekb.ru -- Apache 2.4, domain document root.
+# Enable SSL in the hosting control panel before uploading this file.
+DirectoryIndex index.html
+AddDefaultCharset UTF-8
+Options -Indexes -MultiViews
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Use one canonical host. Other hosts (including localhost) are unaffected.
+    RewriteCond %{HTTP_HOST} ^www\.viking-ekb\.ru(?::[0-9]+)?$ [NC]
+    RewriteRule ^ https://viking-ekb.ru%{REQUEST_URI} [R=301,L,NE]
+
+    # A hosting reverse proxy must overwrite X-Forwarded-Proto itself.
+    RewriteCond %{HTTP_HOST} ^viking-ekb\.ru(?::[0-9]+)?$ [NC]
+    RewriteCond %{HTTPS} !=on
+    RewriteCond %{HTTP:X-Forwarded-Proto} !^https$ [NC]
+    RewriteRule ^ https://viking-ekb.ru%{REQUEST_URI} [R=301,L,NE]
+
+    # No SPA fallback: unknown URLs retain Apache's genuine 404 response.
+</IfModule>
+
+<IfModule mod_mime.c>
+    AddType text/javascript .js
+    AddType image/webp .webp
+    AddType image/svg+xml .svg
+    AddType font/woff2 .woff2
+</IfModule>
+
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # HTML is revalidated; unversioned assets are never marked immutable.
+    <FilesMatch "\.html$">
+        Header set Cache-Control "no-cache"
+    </FilesMatch>
+    <FilesMatch "\.(?:css|js|xml|txt)$">
+        Header set Cache-Control "public, max-age=3600, must-revalidate"
+    </FilesMatch>
+    <FilesMatch "\.(?:png|jpe?g|webp|gif|svg|ico|woff2?)$">
+        Header set Cache-Control "public, max-age=2592000"
+    </FilesMatch>
+</IfModule>
+
+<IfModule mod_deflate.c>
+    <IfModule mod_filter.c>
+        AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript application/javascript application/json application/xml text/xml image/svg+xml
+    </IfModule>
+</IfModule>
+
+<IfModule mod_authz_core.c>
+    <FilesMatch "^\.">
+        Require all denied
+    </FilesMatch>
+</IfModule>

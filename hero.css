@@ -1,0 +1,57 @@
+/* Keep the main message and trial CTA within the initial viewport.
+   Height stays content-driven so zoom and enlarged text cannot clip controls. */
+.hero{
+  --hero-header-height:88px;
+  --hero-strip-height:63px;
+  min-height:min(720px,calc(100svh - var(--hero-header-height) - var(--hero-strip-height)));
+  height:auto;
+}
+.hero-content{padding-top:clamp(18px,4svh,36px);padding-bottom:clamp(22px,4svh,36px)}
+html:lang(ru) .hero h1{font-size:clamp(60px,min(7.5vw,11.5svh),108px);line-height:1.04;margin:0 0 18px}
+.hero h1 .hero-heading-kicker{font-size:13px;line-height:1.35;letter-spacing:1.5px;margin-bottom:18px}
+.hero-content>p{font-size:16px;line-height:1.6}
+.hero-actions{margin-top:22px}
+.hero-community{margin-top:20px}
+.hero-coach{bottom:42px}
+.hero-scroll{bottom:16px}
+
+@media(max-width:1100px){.hero{--hero-header-height:78px}}
+@media(max-width:800px){
+  .hero{--hero-header-height:76px;--hero-strip-height:54px}
+  html:lang(ru) .hero h1{font-size:clamp(60px,min(12.5vw,11.5svh),96px)}
+}
+@media(max-width:560px){
+  .hero{--hero-strip-height:51px;min-height:min(640px,calc(100svh - var(--hero-header-height) - var(--hero-strip-height)))}
+  .hero-content{padding-top:24px;padding-bottom:26px}
+  html:lang(ru) .hero h1{font-size:clamp(50px,min(17vw,10.5svh),76px);margin-bottom:16px}
+  .hero h1 .hero-heading-kicker{font-size:11px;letter-spacing:1px;margin-bottom:16px}
+  .hero-content>p{font-size:15px;line-height:1.55;max-width:340px}
+  .hero-actions{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:12px;margin-top:20px}
+  .hero-actions>.button{font-size:14px;min-height:50px;padding:16px 18px}
+  .film-button{min-width:0;max-width:140px;font-size:10px;line-height:1.3}
+  .hero-community{margin-top:18px}
+}
+@media(max-height:650px){
+  .hero-content{padding-top:16px;padding-bottom:22px}
+  .hero h1 .hero-heading-kicker{font-size:11px;margin-bottom:12px}
+  html:lang(ru) .hero h1{font-size:clamp(48px,min(7.5vw,11svh),84px);margin-bottom:14px}
+  .hero-content>p{font-size:14px;line-height:1.5}
+  .hero-actions{margin-top:16px}
+  .hero-actions>.button{font-size:14px;min-height:48px;padding:14px 18px}
+  .hero-community{margin-top:16px}
+  .hero-scroll{display:none}
+}
+@media(max-width:560px) and (max-height:650px){
+  html:lang(ru) .hero h1{font-size:clamp(44px,min(15.5vw,10.5svh),64px)}
+  .hero h1 .hero-heading-kicker{font-size:10px}
+  .hero-actions{gap:10px}
+  .hero-actions>.button{font-size:13px;padding:14px 16px;min-height:46px}
+}
+@media(min-width:561px) and (max-height:500px){
+  .hero-content{padding-top:12px}
+  html:lang(ru) .hero h1{font-size:clamp(34px,min(7.5vw,9.5svh),46px);margin-bottom:12px}
+  .hero h1 .hero-heading-kicker{margin-bottom:10px}
+  .hero-content>p{max-width:600px;font-size:13px}
+  .hero-actions{margin-top:14px}
+  .hero-actions>.button{font-size:13px;min-height:46px;padding:14px 16px}
+}

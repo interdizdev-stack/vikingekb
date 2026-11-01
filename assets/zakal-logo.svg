@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 64" fill="none">
+  <title>ЗАКАЛ — фитнес-клуб</title>
+  <desc>Оранжевая угловатая монограмма З и белая геометрическая надпись ЗАКАЛ.</desc>
+  <path fill="#ff5b20" d="M6 4h34l14 14-12 12 12 12-14 14H6V44h28l6-6-10-8H18V20h12l10-6H6V4Z"/>
+  <path fill="#ff5b20" d="M0 20h9v10H0z"/>
+  <g fill="#f1f0eb" transform="translate(78 10) scale(1.22)">
+    <path d="M0 0h19l8 8v5l-6 5 6 5v5l-8 8H0v-8h16l3-3-5-4H6v-7h8l5-4-3-3H0V0Z"/>
+    <path fill-rule="evenodd" d="M35 36 43 0h12l8 36h-9l-1.4-7h-8.2L43 36h-8Zm11-14h5L49.5 10h-2L46 22Z" clip-rule="evenodd"/>
+    <path d="M69 0h8v14h4l8-14h10L88 18l12 18H90L81 22h-4v14h-8V0Z"/>
+    <path fill-rule="evenodd" d="m106 36 8-36h12l8 36h-9l-1.4-7h-8.2l-1.4 7h-8Zm11-14h5l-1.5-12h-2L117 22Z" clip-rule="evenodd"/>
+    <path d="M140 36v-8h4l7-28h15l8 36h-9l-6-27h-2l-5 21-5 6h-7Z"/>
+  </g>
+</svg>
